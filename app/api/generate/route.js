@@ -19,7 +19,7 @@ try {
           { role: 'system', content: 'You are a professional web developer who creates clean, modern portfolio websites. Return only the complete HTML code with embedded Tailwind CSS and JavaScript. Include comments for major sections.' },
           { role: 'user', content: prompt }
         ],
-        model: 'llama-3.1-70b-versatile',
+        model: 'llama-3.3-70b-versatile',
         temperature: 0.1,
         max_tokens: 10,
       });
