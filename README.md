@@ -1,6 +1,6 @@
-# Portfolio Website Generator
+# Small Businesses Website Generator
 
-A **Portfolio Website Generator** that allows users to create professional portfolio websites effortlessly. Users can input their details, skills, projects, and contact information to generate a fully functional portfolio.
+A **Portfolio Website Generator** that allows users to create professional business websites effortlessly. Users can input their details, skills, projects, and contact information to generate a fully functional portfolio.
 
 ## Features
 
