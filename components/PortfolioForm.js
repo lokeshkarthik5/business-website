@@ -76,12 +76,15 @@ export default function PortfolioForm() {
     setDeploymentStatus('deploying');
     
     try {
+
+      const folderName = `${formData.name.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}`;
+
       const response = await fetch('/api/deploy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ code: generatedCode }),
+        body: JSON.stringify({ code: generatedCode, folderName:folderName }),
       });
 
       const data = await response.json();
