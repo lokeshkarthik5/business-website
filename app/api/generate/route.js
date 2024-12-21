@@ -6,7 +6,7 @@ const groqClient = new Groq({ apiKey: process.env.GROQ_API_KEY });
 export async function POST(req) {
   const data = await req.json();
 
-  // Create a specialized prompt for home service businesses
+
   const prompt = `Create a modern, responsive website for a home service business using HTML, Tailwind CSS, and JavaScript.
 
 Business Details:
@@ -74,31 +74,28 @@ Requirements:
       stream: false
     });
 
-    // Extract and clean the generated code
+
     let generatedCode = response.choices[0].message.content;
 
-    // Remove any markdown code block indicators that might be in the response
+
     generatedCode = generatedCode.replace(/```html\n?|```\n?/g, '');
-    
-    // Remove any HTML comments at the start of the file
+
     generatedCode = generatedCode.replace(/^<!--[\s\S]*?-->\s*/m, '');
 
-    // Validate that we received HTML content
+
     if (!generatedCode || typeof generatedCode !== 'string') {
       throw new Error('Invalid response format from AI model');
     }
 
-    // Clean up any potential whitespace issues
     generatedCode = generatedCode.trim();
 
-    // Ensure the code starts with DOCTYPE and has proper meta tags
     if (!generatedCode.includes('<!DOCTYPE html>')) {
       generatedCode = `<!DOCTYPE html>
 <html lang="en">
 ${generatedCode}`;
     }
 
-    // Add viewport meta tag if missing
+
     if (!generatedCode.includes('viewport')) {
       generatedCode = generatedCode.replace('<head>', `<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">`);
