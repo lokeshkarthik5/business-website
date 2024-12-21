@@ -8,8 +8,8 @@ export async function POST(req){
 const data = await req.json()
 
 const prompt = `Create a modern, responsive portfolio website using HTML, Tailwind CSS, and JavaScript for a ${data.role} named ${data.name}.
-Include these sections: About (${data.about}), Skills (${data.skills}), Projects (${data.projects.join(', ')}), and Contact information.
-Use a professional design with animations. Include error handling and responsive design. Make it nice as well`;
+Include these sections: About (${data.about}), Skills (${data.skills}), Projects (${data.projects.join(', ')}), and Contact information. 
+The color choice should be ${data.colors} and follow this only. Use a professional design with animations. Include error handling and responsive design. Add scroll animations and even more. Add extra content about the profile and add some catchy lines as well.`;
 
 
 try {
