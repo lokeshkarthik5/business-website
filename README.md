@@ -32,9 +32,5 @@ Ensure you have the following installed:
 - **npm** or **yarn**
 - AWS CLI (configured with access to deploy to S3 if using the deploy feature)
 
-### Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/portfolio-website-generator.git
-   cd portfolio-website-generator
+
