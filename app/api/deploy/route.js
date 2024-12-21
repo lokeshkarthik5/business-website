@@ -22,6 +22,11 @@ export async function POST(req){
     try {
 
         const bucketName = process.env.AWS_S3_BUCKET;
+
+        if(!bucketName){
+            console.log("No bucket Name")
+            return NextResponse.json("No bucket Name")
+        }
         const key = `${sanitizedFolderName}/index.html`;
 
         await s3Client.send(new PutObjectCommand({
