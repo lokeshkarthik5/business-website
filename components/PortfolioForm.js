@@ -103,7 +103,7 @@ export default function PortfolioForm() {
 
   const downloadCode = () => {
     const blob = new Blob([generatedCode], { type: 'text/html;charset=utf-8' });
-    saveAs(blob, 'portfolio.html');
+    saveAs(blob, 'index.html');
   };
 
   return (

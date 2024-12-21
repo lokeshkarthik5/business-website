@@ -9,7 +9,7 @@ const data = await req.json()
 
 const prompt = `Create a modern, responsive portfolio website using HTML, Tailwind CSS, and JavaScript for a ${data.role} named ${data.name}.
 Include these sections: About (${data.about}), Skills (${data.skills}), Projects (${data.projects.join(', ')}), and Contact information.
-Use a professional design with animations. Include error handling and responsive design.`;
+Use a professional design with animations. Include error handling and responsive design. Make it nice as well`;
 
 
 try {
@@ -21,14 +21,15 @@ try {
         ],
         model: 'llama-3.3-70b-versatile',
         temperature: 0.1,
-        max_tokens: 10,
+        
+        stream: false
       });
 
-      return NextResponse.json({code:response.choices[0].message.content})
+      return NextResponse.json({ code: response.choices[0].message.content });
     
 } catch (error) {
     
-    return NextResponse.json({error:error.message},{status:500})
+    return NextResponse.json({ error: error.message }, { status: 500 })
 
 }
 
